@@ -1,0 +1,14 @@
+
+
+next.host.gasfart.cloud {
+    reverse_proxy localhost:11000
+}
+
+
+https://next.host.gasfart.cloud:8443 {
+    reverse_proxy localhost:11001 {
+        transport http {
+            tls_insecure_skip_verify
+        }
+    }
+}

@@ -1,0 +1,10 @@
+[Container]
+Image=caddy:latest
+PublishPort=80:80
+PublishPort=443:443
+PublishPort=443:443/udp
+Volume=/etc/containers/systemd/caddy/Caddyfile:/etc/caddy/Caddyfile
+
+[Service]
+Restart=always
+WantedBy=multi-user.target default.target
