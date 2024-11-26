@@ -3,7 +3,8 @@ FROM quay.io/fedora/fedora-bootc:41
 
 COPY etc /etc
 COPY usr /usr
-RUN dnf install                                   \
+
+RUN dnf install -y                                \
     cockpit                                       \
     cockpit-storaged                              \
     cockpit-podman                                \
