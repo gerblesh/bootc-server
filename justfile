@@ -1,5 +1,13 @@
 export IMAGE_REF:="ghcr.io/gerblesh/bootc-server:latest"
 
+_default:
+    #!/bin/bash
+    /usr/bin/just --list --list-heading $'Available commands:\n' --list-prefix $' - '
+
+build-container:
+    podman build . bootc-server
+
+
 build-iso:
     #!/bin/bash
     sudo podman pull ${IMAGE_REF}
